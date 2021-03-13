@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/authorizationFragment">
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.authorization.AuthorizationFragment"
+        android:label="authorization_fragment"
+        tools:layout="@layout/authorization_fragment" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_registationFragment"
+            app:destination="@id/registationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registationFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.registration.RegistationFragment"
+        android:label="registation_fragment"
+        tools:layout="@layout/registation_fragment" />
+</navigation>
