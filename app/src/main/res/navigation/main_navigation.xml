@@ -19,4 +19,22 @@
         android:name="com.helicoptera.onlyjojofans.ui.registration.RegistationFragment"
         android:label="registation_fragment"
         tools:layout="@layout/registation_fragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.settings.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_authorizationFragment"
+            app:destination="@id/authorizationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.list.ListFragment"
+        android:label="list_fragment"
+        tools:layout="@layout/list_fragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.map.MapFragment"
+        android:label="map_fragment"
+        tools:layout="@layout/map_fragment" />
 </navigation>
