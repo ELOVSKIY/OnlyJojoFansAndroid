@@ -35,7 +35,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 val displayMetrics = resources.displayMetrics
                 val localeList = LocaleList(locale)
                 configuration?.setLocales(localeList)
-                context?.createConfigurationContext(configuration)
+                resources.updateConfiguration(configuration, displayMetrics)
+                view?.invalidate()
             }
 
             return@OnPreferenceChangeListener true
@@ -55,4 +56,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             return@OnPreferenceChangeListener true
         }
     }
+
+
+
 }
