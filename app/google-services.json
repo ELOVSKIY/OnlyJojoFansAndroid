@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "850269559349",
+    "firebase_url": "https://onlyjojofans-2c337-default-rtdb.firebaseio.com",
+    "project_id": "onlyjojofans-2c337",
+    "storage_bucket": "onlyjojofans-2c337.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850269559349:android:8f86b4fd72f33b026fef7c",
+        "android_client_info": {
+          "package_name": "com.helicoptera.onlyjojofans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850269559349-ct5r4fm3jauje173fv0fn3r57u7eef7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXAzzHlkooFTvvvJhuoV2sEfqN6SR8IVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850269559349-ct5r4fm3jauje173fv0fn3r57u7eef7e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "850269559349-f0qade1caajg2fd4m0f2ut2usm8bnoei.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.helicoptera.OnlyJojoFans"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
