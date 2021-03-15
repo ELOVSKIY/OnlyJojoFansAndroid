@@ -14,4 +14,8 @@
     <string name="english">English</string>
     <string name="russian">Russian</string>
     <string name="dark_mode_enabled">Dark Mode Enabled</string>
+
+    <!-- UI-->
+    <string name="registration">Registration</string>
+    <string name="authorization">Authorization</string>
 </resources>

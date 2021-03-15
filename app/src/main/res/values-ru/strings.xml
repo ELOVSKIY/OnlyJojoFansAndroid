@@ -15,4 +15,8 @@
     <string name="english">Английский</string>
     <string name="russian">русский</string>
     <string name="dark_mode_enabled">Тёмная тема</string>
+
+    <!-- UI-->
+    <string name="registration">Регистрация</string>
+    <string name="authorization">Авторизация</string>
 </resources>

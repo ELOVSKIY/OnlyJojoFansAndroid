@@ -13,12 +13,23 @@
         <action
             android:id="@+id/action_authorizationFragment_to_registationFragment"
             app:destination="@id/registationFragment" />
+        <action
+            android:id="@+id/action_authorizationFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/authorizationFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registationFragment"
         android:name="com.helicoptera.onlyjojofans.ui.registration.RegistationFragment"
         android:label="registation_fragment"
-        tools:layout="@layout/registation_fragment" />
+        tools:layout="@layout/registration_fragment" >
+        <action
+            android:id="@+id/action_registationFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/authorizationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.helicoptera.onlyjojofans.ui.settings.SettingsFragment"

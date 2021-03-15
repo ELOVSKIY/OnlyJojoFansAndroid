@@ -20,7 +20,7 @@ class RegistationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.registation_fragment, container, false)
+        return inflater.inflate(R.layout.registration_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
