@@ -1,21 +1,25 @@
 package com.helicoptera.onlyjojofans.data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.helicoptera.onlyjojofans.data.model.JojoCharacter
 
 object CharacterRepository {
 
-    private val JOJO_CHARACTERS: MutableSet<JojoCharacter> = HashSet()
+    private val _characters: MutableLiveData<MutableSet<JojoCharacter>> = MutableLiveData(HashSet())
+    val characters: LiveData<Set<JojoCharacter>>
+        get() = _characters as LiveData<Set<JojoCharacter>>
 
     fun addCharacter(jojoCharacter: JojoCharacter) {
-        JOJO_CHARACTERS.add(jojoCharacter)
+        _characters.value?.add(jojoCharacter)
     }
 
     fun updateCharacter(jojoCharacter: JojoCharacter) {
-        JOJO_CHARACTERS.add(jojoCharacter)
+        _characters.value?.add(jojoCharacter)
     }
 
     fun getCharacterById(id: String?): JojoCharacter? {
-        return JOJO_CHARACTERS.first { character ->
+        return _characters.value?.first { character ->
             character.id == id
         }
     }
