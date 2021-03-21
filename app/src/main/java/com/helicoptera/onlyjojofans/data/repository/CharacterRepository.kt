@@ -1,21 +1,21 @@
 package com.helicoptera.onlyjojofans.data.repository
 
-import com.helicoptera.onlyjojofans.data.model.Character
+import com.helicoptera.onlyjojofans.data.model.JojoCharacter
 
 object CharacterRepository {
 
-    private val characters: MutableSet<Character> = HashSet()
+    private val JOJO_CHARACTERS: MutableSet<JojoCharacter> = HashSet()
 
-    fun addCharacter(character: Character) {
-        characters.add(character)
+    fun addCharacter(jojoCharacter: JojoCharacter) {
+        JOJO_CHARACTERS.add(jojoCharacter)
     }
 
-    fun updateCharacter(character: Character) {
-        characters.add(character)
+    fun updateCharacter(jojoCharacter: JojoCharacter) {
+        JOJO_CHARACTERS.add(jojoCharacter)
     }
 
-    fun getCharacterById(id: Int): Character? {
-        return characters.first { character ->
+    fun getCharacterById(id: String?): JojoCharacter? {
+        return JOJO_CHARACTERS.first { character ->
             character.id == id
         }
     }

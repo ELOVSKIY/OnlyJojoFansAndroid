@@ -1,7 +1,7 @@
 package com.helicoptera.onlyjojofans.data.model
 
-data class Character(
-    val id: Int,
+data class JojoCharacter(
+    var id: String,
     val name: String,
     val email: String,
     val password: String,
@@ -13,7 +13,7 @@ data class Character(
 
 ) {
     override fun equals(other: Any?): Boolean {
-        if (other !is Character) {
+        if (other !is JojoCharacter) {
             return false
         }
 
@@ -21,6 +21,6 @@ data class Character(
     }
 
     override fun hashCode(): Int {
-        return this.id
+        return this.id.hashCode()
     }
 }
