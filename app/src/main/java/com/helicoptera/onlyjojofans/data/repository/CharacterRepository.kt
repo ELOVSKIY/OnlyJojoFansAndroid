@@ -2,9 +2,16 @@ package com.helicoptera.onlyjojofans.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.helicoptera.onlyjojofans.data.model.JojoCharacter
 
 object CharacterRepository {
+
+    init {
+        val firestore = Firebase.firestore
+        firestore.collection("characters")
+    }
 
     private val _characters: MutableLiveData<MutableSet<JojoCharacter>> = MutableLiveData(HashSet())
     val characters: LiveData<Set<JojoCharacter>>
