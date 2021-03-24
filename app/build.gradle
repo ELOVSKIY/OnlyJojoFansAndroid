@@ -48,6 +48,12 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Image Picker
+    implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
+
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-auth-ktx'

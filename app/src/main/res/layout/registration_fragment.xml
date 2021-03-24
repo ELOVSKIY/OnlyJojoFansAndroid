@@ -115,6 +115,18 @@
             app:layout_constraintStart_toEndOf="@+id/lat"
             app:layout_constraintTop_toBottomOf="@+id/weight" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginVertical="@dimen/vertical_margin"
+            android:layout_marginHorizontal="@dimen/horizontal_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/load_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/load_video"
             android:layout_width="0dp"
@@ -148,7 +160,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
