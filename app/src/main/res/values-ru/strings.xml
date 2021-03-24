@@ -19,4 +19,13 @@
     <!-- UI-->
     <string name="registration">Регистрация</string>
     <string name="authorization">Авторизация</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="email">Email</string>
+    <string name="stand">Стэнд</string>
+    <string name="height">Рост</string>
+    <string name="weight">Вес</string>
+    <string name="lon">Lon</string>
+    <string name="lat">Lat</string>
+    <string name="register">Регистрация</string>
 </resources>

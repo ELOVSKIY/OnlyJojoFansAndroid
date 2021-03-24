@@ -8,9 +8,10 @@ data class JojoCharacter(
     val stand: String,
     val height: Float,
     val weight: Float,
-    val lan: Float,
-    val lon: Float
-
+    val lat: Float,
+    val lon: Float,
+    val video: String,
+    val images: List<String>
 ) {
     override fun equals(other: Any?): Boolean {
         if (other !is JojoCharacter) {

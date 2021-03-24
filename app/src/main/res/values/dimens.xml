@@ -3,4 +3,6 @@
     <dimen name="fragment_horizontal_margin">16dp</dimen>
     <dimen name="fragment_vertical_margin">16dp</dimen>
     <dimen name="round_shape_corner">8dp</dimen>
+    <dimen name="horizontal_margin">32dp</dimen>
+    <dimen name="vertical_margin">20dp</dimen>
 </resources>

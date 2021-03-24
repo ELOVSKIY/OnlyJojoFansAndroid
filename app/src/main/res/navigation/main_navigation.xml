@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/registationFragment"
-        android:name="com.helicoptera.onlyjojofans.ui.registration.RegistationFragment"
+        android:name="com.helicoptera.onlyjojofans.ui.registration.RegistrationFragment"
         android:label="registation_fragment"
         tools:layout="@layout/registration_fragment" >
         <action

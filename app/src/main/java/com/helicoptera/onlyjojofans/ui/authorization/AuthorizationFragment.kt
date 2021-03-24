@@ -30,7 +30,7 @@ class AuthorizationFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewModel.onNavigationToList.observe(this) {
+        viewModel.navigateToList.observe(this) {
             if (it) {
                 findNavController().navigate(R.id.action_authorizationFragment_to_listFragment)
                 viewModel.onNavigateToList()

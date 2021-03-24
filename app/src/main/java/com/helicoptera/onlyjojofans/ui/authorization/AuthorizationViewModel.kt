@@ -6,16 +6,16 @@ import androidx.lifecycle.ViewModel
 
 class AuthorizationViewModel : ViewModel() {
 
-    private val  _onNavigationToList = MutableLiveData(false)
-    val onNavigationToList: LiveData<Boolean>
-        get() = _onNavigationToList
+    private val  _navigateToList = MutableLiveData(false)
+    val navigateToList: LiveData<Boolean>
+        get() = _navigateToList
 
     fun onAuthorizationClick() {
-        _onNavigationToList.value = true
+        _navigateToList.value = true
     }
 
     fun onNavigateToList() {
-        _onNavigationToList.value = false
+        _navigateToList.value = false
     }
 
     private val  _onNavigationToRegistration = MutableLiveData(false)
