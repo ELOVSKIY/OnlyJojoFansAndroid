@@ -29,4 +29,6 @@
     <string name="register">Register</string>
     <string name="load_video">Load video</string>
     <string name="load_image">Load image</string>
+    <string name="edit">Edit</string>
+    <string name="confirm">Confirm</string>
 </resources>

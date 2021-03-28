@@ -24,7 +24,7 @@ class CharacterAdapter : ListAdapter<JojoCharacter, CharacterViewHolder>(this) {
 
     companion object : DiffUtil.ItemCallback<JojoCharacter>() {
         override fun areItemsTheSame(oldItem: JojoCharacter, newItem: JojoCharacter): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.authId == newItem.authId
         }
 
         override fun areContentsTheSame(oldItem: JojoCharacter, newItem: JojoCharacter): Boolean {

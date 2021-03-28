@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.helicoptera.onlyjojofans.R
+import com.helicoptera.onlyjojofans.data.repository.CharacterRepository
 import com.helicoptera.onlyjojofans.databinding.CharacterListItemBinding
 import com.helicoptera.onlyjojofans.databinding.ListFragmentBinding
 import com.helicoptera.onlyjojofans.ui.list.recycler.CharacterAdapter
@@ -39,6 +40,7 @@ class ListFragment : Fragment() {
         viewModel.currentCharacter.observe(viewLifecycleOwner) { character ->
             if (character != null) {
                 viewModel.onNavigateToDetail()
+                CharacterRepository.currentCharacter = character
                 findNavController().navigate(R.id.action_listFragment_to_detailFragment)
             }
         }

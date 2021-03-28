@@ -37,8 +37,5 @@ object StorageUtils {
         }.addOnCompleteListener {
             Log.d(TAG,"ON COMPLETE")
         }
-
-
-
     }
 }

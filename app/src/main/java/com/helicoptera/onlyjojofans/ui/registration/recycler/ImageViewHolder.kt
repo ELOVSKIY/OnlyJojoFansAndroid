@@ -6,6 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import com.helicoptera.onlyjojofans.R
 import com.squareup.picasso.Picasso
 import java.io.File
@@ -24,12 +27,14 @@ class ImageViewHolder(private val view: View) :
             }
             return@setOnLongClickListener true
         }
-        val file = File(imageUrl)
-        Picasso.get()
-            .load(file)
-            .fit()
-            .centerCrop()
-            .into(imageView)
+        Firebase.storage.reference.child(imageUrl).downloadUrl
+            .addOnSuccessListener {
+            Picasso.get()
+                .load(it)
+                .fit()
+                .centerCrop()
+                .into(imageView)
+        }
     }
 
     companion object {
