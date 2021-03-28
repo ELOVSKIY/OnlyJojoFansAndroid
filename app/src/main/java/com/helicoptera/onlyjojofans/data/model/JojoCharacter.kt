@@ -1,7 +1,7 @@
 package com.helicoptera.onlyjojofans.data.model
 
 data class JojoCharacter(
-    var id: String = "",
+    var id: String? = "",
     var name: String = "",
     var email: String = "",
     var password: String = "",
@@ -12,16 +12,4 @@ data class JojoCharacter(
     var lon: Float = 0f,
     var video: String = "",
     var images: List<String> = ArrayList()
-) {
-    override fun equals(other: Any?): Boolean {
-        if (other !is JojoCharacter) {
-            return false
-        }
-
-        return this.id == other.id
-    }
-
-    override fun hashCode(): Int {
-        return this.id.hashCode()
-    }
-}
+)

@@ -11,8 +11,10 @@ private const val TAG = "AuthUtils"
 
 object AuthUtils {
 
+    private val auth = Firebase.auth
+
     fun createUser(character: JojoCharacter, listener: (character: JojoCharacter?) -> Unit) {
-        Firebase.auth.createUserWithEmailAndPassword(character.email, character.password)
+        auth.createUserWithEmailAndPassword(character.email, character.password)
             .addOnCompleteListener() { authResult ->
                 if (authResult.isSuccessful) {
                     character.id = Firebase.auth.currentUser?.tenantId ?: ""
@@ -22,14 +24,32 @@ object AuthUtils {
                     listener(null)
                 }
             }.addOnFailureListener {
-                Log.d(TAG, "Authorization failed")
+                Log.d(TAG, "Registrations failed with ${it.message}")
             }
     }
-    
-    fun authorization(email: String, password: String) {
+
+    fun authorization(
+        email: String,
+        password: String,
+        listener: (character: JojoCharacter?) -> Unit
+    ) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    val id = user.tenantId
+                    val character = CharacterRepository.getCharacterById(id)
+                    listener(JojoCharacter())
+                } else {
+                    listener(null)
+                }
+            }
+            .addOnFailureListener {
+                Log.d(TAG, "Authorization failed with ${it.message}")
+            }
     }
 
-    fun getCurrentUser() : JojoCharacter? {
+    fun getCurrentUser(): JojoCharacter? {
         val userId = Firebase.auth.currentUser?.tenantId
         val character = CharacterRepository.getCharacterById(userId)
 

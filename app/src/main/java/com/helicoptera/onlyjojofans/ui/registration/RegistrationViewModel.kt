@@ -96,11 +96,9 @@ class RegistrationViewModel : ViewModel() {
             it.images = _images.value ?: ArrayList()
             it.video = _video.value ?: ""
         }
-        AuthUtils.createUser(character) {
-            for (image in character.images) {
-                StorageUtils.uploadMedia(image) {
-
-                }
+        AuthUtils.createUser(character) { character ->
+            if (character != null) {
+                _navigateToList.value = true
             }
         }
     }

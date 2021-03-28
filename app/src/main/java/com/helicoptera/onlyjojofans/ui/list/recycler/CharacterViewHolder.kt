@@ -9,8 +9,13 @@ import com.helicoptera.onlyjojofans.databinding.CharacterListItemBinding
 class CharacterViewHolder(private val binding: CharacterListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(character: JojoCharacter) {
+    fun bind(character: JojoCharacter, listener: ((JojoCharacter) -> Unit)?) {
         binding.character = character
+        binding.root.setOnClickListener {
+            if (listener != null) {
+                listener(character)
+            }
+        }
     }
 
     companion object {
