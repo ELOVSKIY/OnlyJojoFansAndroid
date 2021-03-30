@@ -3,4 +3,12 @@
         <item>@string/english</item>
         <item>@string/russian</item>
     </string-array>
+
+    <string-array name="fonts">
+        <item>casual</item>
+        <item>cursive</item>
+        <item>monospace</item>
+        <item>sans-serif</item>
+        <item>roboto</item>
+    </string-array>
 </resources>

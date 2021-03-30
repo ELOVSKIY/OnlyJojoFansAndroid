@@ -24,12 +24,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="font"
         android:title="@string/font"
         android:icon="@drawable/ic_list_black_24dp">
 
+        <DropDownPreference
+            android:key="family"
+            android:title="Font family"
+            android:entries="@array/fonts"
+            android:entryValues="@array/fonts"/>
+
         <SeekBarPreference
+            android:key="size"
             android:title="@string/size"
-            android:max="18">
+            android:max="12">
 
         </SeekBarPreference>
 
