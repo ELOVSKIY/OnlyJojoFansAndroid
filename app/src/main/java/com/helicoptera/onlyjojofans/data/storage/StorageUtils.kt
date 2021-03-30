@@ -1,14 +1,10 @@
 package com.helicoptera.onlyjojofans.data.storage
 
-import android.net.Uri
 import android.util.Log
-import com.google.android.gms.auth.api.signin.internal.Storage
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.StorageMetadata
 import com.google.firebase.storage.ktx.storage
-import com.google.firebase.storage.ktx.storageMetadata
 import java.io.File
-import java.io.FileInputStream
 import java.util.*
 
 private const val TAG = "StorageUtils"
@@ -17,7 +13,7 @@ object StorageUtils {
 
     private val storage = Firebase.storage
 
-    fun uploadMedia(imagePath : String, block: (String) -> Unit) {
+    fun uploadMedia(imagePath : String, listener: (String) -> Unit) {
         val metadata = StorageMetadata.Builder()
             .setContentType("image/jpeg")
             .build()
@@ -26,16 +22,18 @@ object StorageUtils {
         val data = file.readBytes()
 
         Log.d(TAG, "All bytes: ${data.size}")
-        var uploadTask = storage.reference.child(file.name).putBytes(data, metadata)
+        val fileName = "${UUID.randomUUID()}.${file.extension}"
+        var uploadTask = storage.reference.child(fileName).putBytes(data, metadata)
         uploadTask.addOnFailureListener {
-           Log.d(TAG,"FAILURE")
+            Log.d(TAG,"FAILURE")
         }.addOnSuccessListener { taskSnapshot ->
             Log.d(TAG,"SUCCESS")
-            block(file.name)
+            listener(fileName)
         }.addOnProgressListener {
             Log.d(TAG, it.bytesTransferred.toString())
         }.addOnCompleteListener {
             Log.d(TAG,"ON COMPLETE")
         }
+
     }
 }

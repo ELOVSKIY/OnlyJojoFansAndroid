@@ -55,6 +55,9 @@ dependencies {
     // Image Picker
     implementation 'net.alhazmy13.MediaPicker:libary:2.4.4'
 
+    //Map
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
     // Firebase
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-auth-ktx'

@@ -9,14 +9,14 @@ import com.helicoptera.onlyjojofans.data.utils.AuthUtils
 
 class RegistrationViewModel : ViewModel() {
 
-    val name = MutableLiveData("")
-    val email = MutableLiveData("")
-    val password = MutableLiveData("")
-    val stand = MutableLiveData("")
-    val height = MutableLiveData("")
-    val weight = MutableLiveData("")
-    val lat = MutableLiveData("")
-    val lon = MutableLiveData("")
+    val name = MutableLiveData("stas")
+    val email = MutableLiveData("test@gmail.com")
+    val password = MutableLiveData("yalouski45")
+    val stand = MutableLiveData("ss")
+    val height = MutableLiveData("179")
+    val weight = MutableLiveData("80")
+    val lat = MutableLiveData("35")
+    val lon = MutableLiveData("60")
 
     private val _video = MutableLiveData("")
     val video: LiveData<String>
@@ -42,7 +42,7 @@ class RegistrationViewModel : ViewModel() {
         if (mediaPaths.isNotEmpty()) {
             StorageUtils.uploadMedia(mediaPaths[0]) { url ->
                 val imagesPath = _images.value!!
-                imagesPath.addAll(mediaPaths)
+                imagesPath.add(url)
                 _images.value = imagesPath
             }
         }

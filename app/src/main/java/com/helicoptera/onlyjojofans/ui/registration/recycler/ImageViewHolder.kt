@@ -1,6 +1,7 @@
 package com.helicoptera.onlyjojofans.ui.registration.recycler
 
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,12 +30,15 @@ class ImageViewHolder(private val view: View) :
         }
         Firebase.storage.reference.child(imageUrl).downloadUrl
             .addOnSuccessListener {
-            Picasso.get()
-                .load(it)
-                .fit()
-                .centerCrop()
-                .into(imageView)
-        }
+                Picasso.get()
+                    .load(it)
+                    .fit()
+                    .centerCrop()
+                    .into(imageView)
+            }
+            .addOnFailureListener {
+                Log.d("ImageViewHolder", it.message.toString())
+            }
     }
 
     companion object {

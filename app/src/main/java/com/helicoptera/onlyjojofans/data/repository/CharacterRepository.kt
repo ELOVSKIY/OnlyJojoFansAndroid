@@ -26,9 +26,12 @@ object CharacterRepository {
 
             val characters = HashSet<JojoCharacter>()
             for (document in snapshot.documents) {
-                val character = document?.toObject(JojoCharacter::class.java)
-                if (character != null) {
-                    characters.add(character)
+                document?.let { document ->
+                    val character = document.toObject(JojoCharacter::class.java)
+                    if (character != null) {
+                        characters.add(character)
+                        character.authId = document.id
+                    }
                 }
             }
 
@@ -39,14 +42,15 @@ object CharacterRepository {
     private val _characters: MutableLiveData<MutableSet<JojoCharacter>> = MutableLiveData(HashSet())
     val characters: LiveData<Set<JojoCharacter>>
         get() {
-            collect()
             return _characters as LiveData<Set<JojoCharacter>>
         }
 
     fun addCharacter(jojoCharacter: JojoCharacter) {
         firestore.collection(COLLECTION_NAME).add(jojoCharacter).addOnCompleteListener {
-            _characters.value?.add(jojoCharacter)
             jojoCharacter.authId = it.result?.id
+            val values = _characters.value
+            values?.add(jojoCharacter)
+            _characters.value = values
         }
     }
 
@@ -58,12 +62,5 @@ object CharacterRepository {
             }.addOnFailureListener {
                 listener(null)
             }
-    }
-
-    fun getCharacterById(id: String?): JojoCharacter? {
-        return null
-        return _characters.value?.first { character ->
-            character.authId == id
-        }
     }
 }

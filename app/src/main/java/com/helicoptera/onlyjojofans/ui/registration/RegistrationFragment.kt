@@ -78,7 +78,6 @@ class RegistrationFragment : Fragment() {
         viewModel.images.observe(this.viewLifecycleOwner) {
             if (it.isNotEmpty()) {
                 imageAdapter.submitList(it)
-                imageAdapter.notifyDataSetChanged()
             }
         }
     }

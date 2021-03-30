@@ -25,7 +25,7 @@ class EditFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel = ViewModelProvider(this).get(EditViewModel::class.java)
         val binding: EditFragmentBinding =
             DataBindingUtil.inflate(inflater, R.layout.edit_fragment, container, false)

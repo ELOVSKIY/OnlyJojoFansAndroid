@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.ListAdapter
 import com.helicoptera.onlyjojofans.data.model.JojoCharacter
 import java.io.File
 
-
-
-
 class ImageAdapter : ListAdapter<String, ImageViewHolder>(this) {
 
     private var onClickListener: ((String) -> Unit)? = null
